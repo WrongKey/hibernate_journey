@@ -3,10 +3,10 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
+<hibernate-mapping package="com.wrongkey.hibernate">
     <class name="com.wrongkey.hibernate.Person" table="persons">
             <id name="id" column="Id_P">
-                    <generator class="increment"/>
+                    <generator class="assigned"/>
             </id>
             <property name="lastName" column="LastName"/>
             <property name="firstName" column="FirstName"/>
