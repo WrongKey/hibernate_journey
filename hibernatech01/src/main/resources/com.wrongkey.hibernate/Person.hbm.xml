@@ -4,7 +4,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.wrongkey.hibernate">
-    <class name="com.wrongkey.hibernate.Person" table="persons">
+    <class name="entity.Person" table="persons">
             <id name="id" column="Id_P">
                     <generator class="assigned"/>
             </id>

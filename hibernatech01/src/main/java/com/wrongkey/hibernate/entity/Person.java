@@ -1,4 +1,4 @@
-package com.wrongkey.hibernate;
+package com.wrongkey.hibernate.entity;
 
 /**
  *@author wrongkey

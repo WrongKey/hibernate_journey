@@ -1,4 +1,4 @@
-package com.wrongkey.hibernate;
+package com.wrongkey.hibernate.utils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;

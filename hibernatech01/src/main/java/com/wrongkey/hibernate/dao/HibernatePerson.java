@@ -1,5 +1,7 @@
-package com.wrongkey.hibernate;
+package com.wrongkey.hibernate.dao;
 
+import com.wrongkey.hibernate.entity.Person;
+import com.wrongkey.hibernate.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,16 +12,10 @@ import org.hibernate.Transaction;
  * @description 使用hibernate向数据库insert一个对象
  * @date 2014/11/14
  */
-public class HibernatePerson {
-    public static void main(String[] args) {
+public class HibernatePerson implements PersionDAO{
 
-        Person p1 = new Person();
-        p1.setId(4);
-        p1.setLastName("yanjun");
-        p1.setFirstName("Song");
-        p1.setAddress("guojiaqiao street");
-        p1.setCity("Chengdu");
-
+    @Override
+    public void save(Person person) {
         //获取SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         //打开Session
@@ -29,7 +25,7 @@ public class HibernatePerson {
 
         try {
             //sava对象p1
-            session.save(p1);
+            session.save(person);
             //提交事务
             transaction.commit();
         } catch (Exception e) {
@@ -40,6 +36,5 @@ public class HibernatePerson {
             //关闭Session
             session.close();
         }
-
     }
 }
