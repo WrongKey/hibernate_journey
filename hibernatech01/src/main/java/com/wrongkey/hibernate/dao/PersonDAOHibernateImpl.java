@@ -12,7 +12,7 @@ import org.hibernate.Transaction;
  * @description 使用hibernate向数据库insert一个对象
  * @date 2014/11/14
  */
-public class HibernatePerson implements PersionDAO{
+public class PersonDAOHibernateImpl implements PersionDAO{
 
     @Override
     public void save(Person person) {
