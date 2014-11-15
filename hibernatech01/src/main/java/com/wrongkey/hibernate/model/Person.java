@@ -1,4 +1,7 @@
-package com.wrongkey.hibernate.entity;
+package com.wrongkey.hibernate.model;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *@author wrongkey
@@ -13,6 +16,11 @@ public class Person {
     private String firstName;    //firstname
     private String address;      //地址
     private String city;         //城市
+
+    private Set<Event> events = new HashSet<Event>();
+
+    public Person() {
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -52,6 +60,14 @@ public class Person {
 
     public String getCity() {
         return city;
+    }
+
+    public Set<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(Set<Event> events) {
+        this.events = events;
     }
 
     @Override

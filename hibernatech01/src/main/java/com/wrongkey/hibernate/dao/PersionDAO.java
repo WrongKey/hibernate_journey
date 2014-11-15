@@ -1,7 +1,5 @@
 package com.wrongkey.hibernate.dao;
 
-import com.wrongkey.hibernate.entity.Person;
-
 /**
  *@author wrongkey
  *@description
@@ -17,5 +15,5 @@ public interface PersionDAO {
      *@return void
      *@date 2014/11/15
      */
-    void save(Person person);
+    void save(Object object);
 }

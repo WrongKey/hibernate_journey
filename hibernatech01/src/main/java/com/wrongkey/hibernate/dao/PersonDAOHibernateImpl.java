@@ -1,6 +1,5 @@
 package com.wrongkey.hibernate.dao;
 
-import com.wrongkey.hibernate.entity.Person;
 import com.wrongkey.hibernate.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,7 +14,7 @@ import org.hibernate.Transaction;
 public class PersonDAOHibernateImpl implements PersionDAO{
 
     @Override
-    public void save(Person person) {
+    public void save(Object obj) {
         //获取SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         //打开Session
@@ -25,7 +24,7 @@ public class PersonDAOHibernateImpl implements PersionDAO{
 
         try {
             //sava对象p1
-            session.save(person);
+            session.save(obj);
             //提交事务
             transaction.commit();
         } catch (Exception e) {

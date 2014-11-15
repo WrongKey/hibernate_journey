@@ -3,8 +3,8 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping package="com.wrongkey.hibernate">
-    <class name="entity.Person" table="persons">
+<hibernate-mapping package="com.wrongkey.hibernate.model">
+    <class name="Person" table="persons">
             <id name="id" column="Id_P">
                     <generator class="assigned"/>
             </id>
@@ -12,6 +12,10 @@
             <property name="firstName" column="FirstName"/>
             <property name="address" column="Address"/>
             <property name="city" column="City"/>
+            <set name="events" table="Person_Event">
+                    <key column="Id_Person"/>
+                    <many-to-many column="Id_Event" class="com.wrongkey.hibernate.model.Event"/>
+            </set>
     </class>
 </hibernate-mapping>
 

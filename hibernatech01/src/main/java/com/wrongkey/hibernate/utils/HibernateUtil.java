@@ -13,20 +13,23 @@ import org.hibernate.cfg.Configuration;
  *
  */
 public class HibernateUtil {
-    private static  SessionFactory sessionFactory;
-    static{
-        try {
+    private static final  SessionFactory SESSION_FACTORY = buildSessionFactory();
+
+    /**
+     *@author wrongkey
+     *@description
+     *@param []
+     *@return org.hibernate.SessionFactory
+     *@date 2014/11/15
+     */
+    private static SessionFactory buildSessionFactory(){
             //获取配置信息
             Configuration configuration = new Configuration().configure("com.wrongkey.hibernate/hibernatech01.cfg.xml");
             StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
 
             StandardServiceRegistryImpl registry = (StandardServiceRegistryImpl) builder.build();
             //获取SessionFactory
-            sessionFactory = configuration.buildSessionFactory(registry);
-        } catch (Exception e) {
-            System.out.println("获取SessionFactory失败......");
-            e.printStackTrace();
-        }
+            return configuration.buildSessionFactory(registry);
     }
 
     /**
@@ -37,6 +40,6 @@ public class HibernateUtil {
      *@date 2014/11/15
      */
     public static SessionFactory getSessionFactory() {
-        return sessionFactory;
+        return SESSION_FACTORY;
     }
 }

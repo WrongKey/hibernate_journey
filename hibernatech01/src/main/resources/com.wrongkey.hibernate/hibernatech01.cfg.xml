@@ -14,5 +14,6 @@
                 <property name="show_sql">true</property>
 
                 <mapping resource="com.wrongkey.hibernate/Person.hbm.xml"/>
+                <mapping resource="com.wrongkey.hibernate/Event.hbm.xml"/>
         </session-factory>
 </hibernate-configuration>
